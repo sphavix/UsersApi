@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Deployment
 metadata:
-  name: progres
+  name: postgres
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: progres
+      app: postgres
   template:
     metadata:
       labels:
-        app: progres
+        app: postgres
     spec:
       containers:
       - name: postgres
@@ -27,4 +27,4 @@ spec:
       volumes:
       - name: postgresdata
         persistentVolumeClaim:
-          claimName: prostgres-volume-claim
+          claimName: postgres-volume-claim
